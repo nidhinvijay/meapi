@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Me-API Playground</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Me-API Playground</h1>
+    <p class="muted">Django • DRF • SQLite • Render</p>
+  </header>
+
+  <main class="wrap grid">
+    <section>
+      <h2>Profile</h2>
+      <pre id="profileBox">Loading...</pre>
+    </section>
+
+    <section>
+      <h2>Search Projects by Skill</h2>
+      <div class="row">
+        <input id="skillInput" placeholder="e.g. python" />
+        <button id="searchBtn">Search</button>
+      </div>
+      <ul id="projectsList"></ul>
+    </section>
+
+    <section>
+      <h2>Top Skills</h2>
+      <ul id="topSkills"></ul>
+    </section>
+  </main>
+
+  <footer class="wrap muted">GET <code>/health</code> should return 200 ✅</footer>
+
+  <script>
+    const API = (path) => `${location.origin}/api/${path}`;
+
+    async function loadProfile(){
+      const res = await fetch(API("profiles/"));
+      const data = await res.json();
+      const me = data[0];
+      document.getElementById("profileBox").textContent = JSON.stringify(me, null, 2);
+    }
+
+    async function loadTopSkills(){
+      const res = await fetch(API("skills/top/"));
+      const skills = await res.json();
+      document.getElementById("topSkills").innerHTML = skills.map(s=>`<li>${s.name}</li>`).join("");
+    }
+
+    async function searchProjects(skill){
+      const url = skill ? API(`projects/?skill=${encodeURIComponent(skill)}`) : API("projects/");
+      const res = await fetch(url);
+      const items = await res.json();
+      document.getElementById("projectsList").innerHTML = items.map(p=>`
+        <li>
+          <strong>${p.title}</strong><br/>
+          <small>${p.description}</small>
+        </li>
+      `).join("");
+    }
+
+    document.getElementById("searchBtn").onclick = () => {
+      const skill = document.getElementById("skillInput").value.trim();
+      searchProjects(skill);
+    };
+
+    loadProfile(); loadTopSkills(); searchProjects("");
+  </script>
+</body>
+</html>

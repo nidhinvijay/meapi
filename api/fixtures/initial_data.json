@@ -1,0 +1,160 @@
+[
+  {
+    "model": "api.profile",
+    "pk": 1,
+    "fields": {
+      "name": "Nidhin V",
+      "email": "nidhinvijaynv@gmail.com",
+      "education": "MCA, University of Kerala (July 2025)"
+    }
+  },
+  {
+    "model": "api.skill",
+    "pk": 1,
+    "fields": { "name": "python" }
+  },
+  {
+    "model": "api.skill",
+    "pk": 2,
+    "fields": { "name": "django" }
+  },
+  {
+    "model": "api.skill",
+    "pk": 3,
+    "fields": { "name": "rest api" }
+  },
+  {
+    "model": "api.skill",
+    "pk": 4,
+    "fields": { "name": "sqlite" }
+  },
+  {
+    "model": "api.skill",
+    "pk": 5,
+    "fields": { "name": "html" }
+  },
+  {
+    "model": "api.skill",
+    "pk": 6,
+    "fields": { "name": "css" }
+  },
+  {
+    "model": "api.skill",
+    "pk": 7,
+    "fields": { "name": "javascript" }
+  },
+  {
+    "model": "api.skill",
+    "pk": 8,
+    "fields": { "name": "react" }
+  },
+  {
+    "model": "api.skill",
+    "pk": 9,
+    "fields": { "name": "machine learning" }
+  },
+  {
+    "model": "api.skill",
+    "pk": 10,
+    "fields": { "name": "nlp" }
+  },
+  {
+    "model": "api.link",
+    "pk": 1,
+    "fields": {
+      "github": "https://github.com/nidhinvijay",
+      "linkedin": "https://linkedin.com/in/nidhinvijay",
+      "portfolio": "https://nidhinvijay.dev"
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 1,
+    "fields": {
+      "title": "AI Interview Bot",
+      "description": "Django + React + PostgreSQL; AI-driven interviews and shortlisting.",
+      "skills": [1, 2, 3, 8, 9, 10]
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 2,
+    "fields": {
+      "title": "BookHub",
+      "description": "Modern UI book catalog with Django.",
+      "skills": [1, 2, 4, 5, 6, 7]
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 3,
+    "fields": {
+      "title": "TaskFlow",
+      "description": "Task manager with deadlines, reminders, and REST API.",
+      "skills": [1, 2, 3, 7]
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 4,
+    "fields": {
+      "title": "ShopSmart",
+      "description": "E-commerce site with Django REST API + React frontend.",
+      "skills": [1, 2, 3, 8]
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 5,
+    "fields": {
+      "title": "HealthTrack",
+      "description": "Health monitoring app with ML predictions.",
+      "skills": [1, 9]
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 6,
+    "fields": {
+      "title": "Langify",
+      "description": "NLP-based translation and chatbot system.",
+      "skills": [1, 10]
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 7,
+    "fields": {
+      "title": "FinTrack",
+      "description": "Finance tracker with SQLite + Django.",
+      "skills": [1, 2, 4]
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 8,
+    "fields": {
+      "title": "MovieVerse",
+      "description": "Movie review and rating platform.",
+      "skills": [1, 2, 8, 7]
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 9,
+    "fields": {
+      "title": "QuizMaster",
+      "description": "Online quiz system with Django + JS.",
+      "skills": [1, 2, 7]
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 10,
+    "fields": {
+      "title": "WeatherCast",
+      "description": "Weather forecasting using ML and APIs.",
+      "skills": [1, 9, 8]
+    }
+  }
+]
