@@ -7,6 +7,7 @@ A simple Django REST API project using Django + DRF + SQLite with deployment set
 Clone the repository
 
 git clone https://github.com/nidhinvijay/meapi.git
+
 cd meapi
 
 
