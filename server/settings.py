@@ -1,7 +1,8 @@
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
+import os
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-secret")
 
-SECRET_KEY = "replace-me"
 DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
