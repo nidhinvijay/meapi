@@ -26,7 +26,6 @@ Thumbs.db
 *.pot
 *.py,cover
 local_settings.py
-db.sqlite3
 media/
 staticfiles/
 
